@@ -14,12 +14,12 @@ class MyApp extends App {
   }
 
   render() {
-    const { Component, pageProps /*, router*/ } = this.props;
+    const { Component, pageProps, router } = this.props;
     return (
       <Container>
         <ThemeProvider theme={theme}>
-          <Layout>
-            <Component {...pageProps} />
+          <Layout path={router.pathname}>
+            <Component {...pageProps} router={router} />
           </Layout>
         </ThemeProvider>
         <style jsx global>{`
@@ -69,7 +69,6 @@ class MyApp extends App {
 
           body,
           html {
-            overflow: hidden;
             margin: 0;
             padding: 0;
             background-color: rgb(255, 107, 124);
@@ -80,7 +79,6 @@ class MyApp extends App {
             font-style: normal;
             line-height: 1.5;
             min-height: 100vh;
-            overflow: hidden;
             background: linear-gradient(rgb(255, 107, 124), #fb4b53);
           }
 

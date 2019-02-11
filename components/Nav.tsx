@@ -1,17 +1,30 @@
-// import Link from "next/link";
+import Link from "next/link";
 import styled from "./styled-components";
 
-const LinkList = styled.ul`
+const LinkList = styled.ul<{ home: boolean }>`
   display: flex;
   justify-content: center;
-  margin: ${props => props.theme.spacing[6]};
+  margin: 0;
   padding: 0;
+  position: ${props => (props.home ? "relative" : "fixed")};
+  width: 100vw;
+  left: 0;
+  top: 0;
+  background: ${props => (props.home ? "transparent" : "white")};
+  box-shadow: ${props =>
+    props.home ? "none" : "0 2px 2px rgba(0, 0, 0, 0.05)"};
   a {
     text-decoration: none;
-    color: ${props => props.theme.colors.brand03};
+    color: ${props => (props.home ? props.theme.colors.brand03 : "#fb4b53")};
   }
+
+  li {
+    border-bottom: 2px solid
+      ${props => (props.home ? props.theme.colors.brand03 : "#fb4b53")};
+  }
+
   @media (max-width: 750px) {
-    width: 100vw;
+    margin: 0;
   }
 `;
 
@@ -20,7 +33,6 @@ const ListItem = styled.li`
   font-size: ${props => props.theme.typeScale[5]}px;
   font-variation-settings: var(--light-condensed);
   transition: all 0.5s ease;
-  border-bottom: 1px solid white;
   padding: 0 0.5rem;
   &:hover {
     font-variation-settings: var(--semi-bold-condensed);
@@ -32,14 +44,9 @@ const ListItem = styled.li`
     padding: 0 0.25rem;
   }
 `;
-const Nav = () => (
+const Nav: React.FC<{ home?: boolean }> = ({ home }) => (
   <nav>
-    <LinkList>
-      {/* <ListItem>
-        <Link>
-          <a>about</a>
-        </Link>
-      </ListItem> */}
+    <LinkList home={home}>
       <ListItem>
         <a href="https://github.com/vpicone">github</a>
       </ListItem>
@@ -50,7 +57,9 @@ const Nav = () => (
         <a href="https://twitter.com/TheElodin">twitter</a>
       </ListItem>
       <ListItem>
-        <a href="mailto:vp@vincepic.one">email</a>
+        <Link href="blog">
+          <a>blog</a>
+        </Link>
       </ListItem>
     </LinkList>
   </nav>
