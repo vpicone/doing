@@ -1,0 +1,5 @@
+{
+  "version": 2,
+  "name": "doing",
+  "builds": [{ "src": "next.config.js", "use": "@now/next" }]
+}
