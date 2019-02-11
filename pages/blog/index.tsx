@@ -1,4 +1,5 @@
 import styled from "../../components/styled-components";
+import Link from "next/link";
 
 const BlogContainer = styled.div`
   width: 100vw;
@@ -25,6 +26,9 @@ const BlogContainer = styled.div`
 const Post = styled.article`
   color: #2d2d2d;
   margin-bottom: ${props => props.theme.spacing[8]};
+  a {
+    color: inherit;
+  }
   h2 {
     margin: 0;
   }
@@ -40,73 +44,15 @@ const Blog = () => (
     <ul>
       <li>
         <Post>
-          <h2>Title</h2>
+          <Link prefetch href="/blog/test">
+            <a>
+              <h2>Hello World</h2>
+            </a>
+          </Link>
           <time>2/11/2019</time>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas
-            expedita est perspiciatis natus possimus quis minus eveniet dolorem,
-            doloremque explicabo commodi incidunt nobis vitae provident.
-            Assumenda neque accusantium ipsa voluptate.
-          </p>
-        </Post>
-      </li>
-      <li>
-        <Post>
-          <h2>Title</h2>
-          <time>2/11/2019</time>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas
-            expedita est perspiciatis natus possimus quis minus eveniet dolorem,
-            doloremque explicabo commodi incidunt nobis vitae provident.
-            Assumenda neque accusantium ipsa voluptate.
-          </p>
-        </Post>
-      </li>
-      <li>
-        <Post>
-          <h2>Title</h2>
-          <time>2/11/2019</time>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas
-            expedita est perspiciatis natus possimus quis minus eveniet dolorem,
-            doloremque explicabo commodi incidunt nobis vitae provident.
-            Assumenda neque accusantium ipsa voluptate.
-          </p>
-        </Post>
-      </li>
-      <li>
-        <Post>
-          <h2>Title</h2>
-          <time>2/11/2019</time>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas
-            expedita est perspiciatis natus possimus quis minus eveniet dolorem,
-            doloremque explicabo commodi incidunt nobis vitae provident.
-            Assumenda neque accusantium ipsa voluptate.
-          </p>
-        </Post>
-      </li>
-      <li>
-        <Post>
-          <h2>Title</h2>
-          <time>2/11/2019</time>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas
-            expedita est perspiciatis natus possimus quis minus eveniet dolorem,
-            doloremque explicabo commodi incidunt nobis vitae provident.
-            Assumenda neque accusantium ipsa voluptate.
-          </p>
-        </Post>
-      </li>
-      <li>
-        <Post>
-          <h2>Title</h2>
-          <time>2/11/2019</time>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas
-            expedita est perspiciatis natus possimus quis minus eveniet dolorem,
-            doloremque explicabo commodi incidunt nobis vitae provident.
-            Assumenda neque accusantium ipsa voluptate.
+            This is a test post wiring up MDX, TypeScript, and Next.js; watch
+            this space :)
           </p>
         </Post>
       </li>
