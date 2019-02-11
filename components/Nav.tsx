@@ -82,7 +82,7 @@ const Nav: React.FC<{ home?: boolean }> = ({ home }) => {
           <a href="https://twitter.com/TheElodin">twitter</a>
         </ListItem>
         <ListItem>
-          <Link href="/blog" prefetch>
+          <Link href="/blog">
             <a>blog</a>
           </Link>
         </ListItem>
