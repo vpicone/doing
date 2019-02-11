@@ -5,7 +5,6 @@ const BlogContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding: ${props => props.theme.spacing[6]};
-  padding-top: 150px;
   padding-left: 0;
   padding-right: 0;
   background: white;
@@ -18,7 +17,8 @@ const BlogContainer = styled.div`
     padding: 0;
   }
   @media (max-width: 750px) {
-    padding: 80px ${props => props.theme.spacing[6]};
+    padding: 0 ${props => props.theme.spacing[6]};
+    padding-bottom: 160px;
   }
 `;
 

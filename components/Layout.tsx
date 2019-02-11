@@ -6,15 +6,18 @@ const LayoutStyles = styled.main<{ home: boolean }>`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  padding-top: ${props => (props.home ? "0" : "120px")};
+  justify-content: ${props => (props.home ? "center" : "flex-start")};
   align-items: center;
+  background: ${props => (props.home ? "transparent" : "white")};
   @media (max-width: 750px) {
     padding-bottom: ${props => (props.home ? "20vh" : 0)};
+    padding-top: ${props => (props.home ? "0" : "90px")};
   }
 `;
 
 const Layout = props => (
-  <LayoutStyles home={props.home}>
+  <LayoutStyles home={props.path === "/"}>
     {props.children}
     <Nav home={props.path === "/"} />
   </LayoutStyles>
