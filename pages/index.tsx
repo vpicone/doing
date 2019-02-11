@@ -61,8 +61,6 @@ const Home: React.FunctionComponent = () => {
           }}
         >
           {item => props => {
-            console.log("item", item);
-            console.log("props", props);
             return item.em ? (
               <Word as="em" done={props.done} style={props}>
                 {item.text}
