@@ -6,12 +6,14 @@ const BlogContainer = styled.div`
   flex-direction: column;
   padding: ${props => props.theme.spacing[6]};
   padding-top: 150px;
+  padding-left: 0;
+  padding-right: 0;
   background: white;
   align-items: center;
   ul {
     list-style: none;
     width: 100%;
-    max-width: 600px;
+    max-width: 550px;
     margin: 0;
     padding: 0;
   }

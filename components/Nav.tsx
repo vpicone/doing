@@ -7,22 +7,28 @@ type ListProps = {
   scrolling: string;
 };
 
-const LinkList = styled.ul<ListProps>`
+const NavContainer = styled.nav<ListProps>`
   display: flex;
   justify-content: center;
-  margin: 0;
-  padding: 0;
   padding-bottom: 0.5rem;
+  box-shadow: ${props =>
+    props.home || props.scrolling == "false"
+      ? "none"
+      : "0 2px 2px rgba(0, 0, 0, 0.05)"};
   position: ${props => (props.home ? "relative" : "fixed")};
   width: 100vw;
   left: 0;
   top: 0;
   background: ${props => (props.home ? "transparent" : "white")};
+`;
+
+const LinkList = styled.ul<ListProps>`
+  display: flex;
+  justify-content: space-between;
+  width: 550px;
+  margin: 0;
+  padding: 0;
   transition: all 0.5s ease;
-  box-shadow: ${props =>
-    props.home || props.scrolling == "false"
-      ? "none"
-      : "0 2px 2px rgba(0, 0, 0, 0.05)"};
   a {
     text-decoration: none;
     color: ${props => (props.home ? props.theme.colors.brand03 : "#fb4b53")};
@@ -39,7 +45,7 @@ const LinkList = styled.ul<ListProps>`
 `;
 
 const ListItem = styled.li`
-  margin: ${props => props.theme.spacing[6]};
+  margin: ${props => props.theme.spacing[6]} 0;
   font-size: ${props => props.theme.typeScale[5]}px;
   font-variation-settings: var(--light-condensed);
   transition: all 0.5s ease;
@@ -54,6 +60,7 @@ const ListItem = styled.li`
     padding: 0 0.25rem;
   }
 `;
+
 const Nav: React.FC<{ home?: boolean }> = ({ home }) => {
   const [scrolling, setScrolling] = useState(false);
   useEffect(() => {
@@ -62,7 +69,7 @@ const Nav: React.FC<{ home?: boolean }> = ({ home }) => {
     return () => document.removeEventListener("scroll", onScroll);
   });
   return (
-    <nav>
+    <NavContainer home={home} scrolling={scrolling ? "true" : "false"}>
       <LinkList home={home} scrolling={scrolling ? "true" : "false"}>
         <ListItem>
           <a href="https://github.com/vpicone">github</a>
@@ -79,7 +86,7 @@ const Nav: React.FC<{ home?: boolean }> = ({ home }) => {
           </Link>
         </ListItem>
       </LinkList>
-    </nav>
+    </NavContainer>
   );
 };
 export default Nav;

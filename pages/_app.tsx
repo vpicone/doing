@@ -69,6 +69,7 @@ class MyApp extends App {
 
           body,
           html {
+            overflow-x: hidden;
             margin: 0;
             padding: 0;
             background-color: rgb(255, 107, 124);
