@@ -18,7 +18,7 @@ const BlogContainer = styled.div`
     padding: 0;
   }
   @media (max-width: 750px) {
-    padding-top: 80px;
+    padding: 80px ${props => props.theme.spacing[6]};
   }
 `;
 

@@ -41,6 +41,7 @@ const LinkList = styled.ul<ListProps>`
 
   @media (max-width: 750px) {
     margin: 0;
+    padding: 0 ${props => props.theme.spacing[4]};
   }
 `;
 
