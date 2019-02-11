@@ -30,7 +30,7 @@ const Post = styled.article`
     color: inherit;
   }
   h2 {
-    margin: 0;
+    margin-bottom: ${props => props.theme.spacing[2]};
   }
   time {
   }
