@@ -44,15 +44,29 @@ const Blog = () => (
     <ul>
       <li>
         <Post>
-          <Link prefetch href="/blog/test">
+          <Link prefetch href="/blog/empathy">
             <a>
-              <h2>Hello World</h2>
+              <h2>A Student's Mindset – 1. Empathy</h2>
             </a>
           </Link>
-          <time>2/11/2019</time>
+          <time>2/12/2019</time>
           <p>
-            This is a test post wiring up MDX, TypeScript, and Next.js; watch
-            this space :)
+            I start with empathy, because I think it might be the most critical.
+            Without it, you'll find it exceedingly hard to forgive yourself and
+            own up to your mistakes.
+          </p>
+        </Post>
+        <Post>
+          <Link prefetch href="/blog/students-mindset">
+            <a>
+              <h2>A Student's Mindset</h2>
+            </a>
+          </Link>
+          <time>2/5/2019</time>
+          <p>
+            In this post, I'm going to outline the shape of a short series I'm
+            doing for what I think is the most important lesson of my first year
+            as a software developer: a student's mindset.
           </p>
         </Post>
       </li>
