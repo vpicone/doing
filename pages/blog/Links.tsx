@@ -8,6 +8,7 @@ const LinkContainer = styled.div`
   .prev {
     color: inherit;
     max-width: 48%;
+    text-align: center;
     margin: ${props => props.theme.spacing[2]} 0;
   }
 
@@ -23,7 +24,7 @@ const LinkContainer = styled.div`
   }
 
   @media (max-width: 600px) {
-    font-size: ${props => props.theme.typeScale[3]}px;
+    font-size: ${props => props.theme.typeScale[2]}px;
   }
 `;
 

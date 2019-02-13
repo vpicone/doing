@@ -56,6 +56,9 @@ const ListItem = styled.li`
     cursor: pointer;
   }
   @media (max-width: 600px) {
+    &:hover {
+      font-variation-settings: var(--light-condensed);
+    }
     margin: ${props => props.theme.spacing[4]};
     font-size: ${props => props.theme.typeScale[3]}px;
     padding: 0 0.25rem;
