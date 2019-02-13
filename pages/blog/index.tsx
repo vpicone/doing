@@ -17,7 +17,7 @@ const BlogContainer = styled.div`
     margin: 0;
     padding: 0;
   }
-  @media (max-width: 750px) {
+  @media (max-width: 600px) {
     padding: 0 ${props => props.theme.spacing[6]};
     padding-bottom: 160px;
   }
@@ -46,27 +46,27 @@ const Blog = () => (
         <Post>
           <Link prefetch href="/blog/empathy">
             <a>
-              <h2>A Student's Mindset – 1. Empathy</h2>
+              <h2>A Student’s Mindset – 1. Empathy</h2>
             </a>
           </Link>
           <time>2/12/2019</time>
           <p>
             I start with empathy, because I think it might be the most critical.
-            Without it, you'll find it exceedingly hard to forgive yourself and
+            Without it, you’ll find it exceedingly hard to forgive yourself and
             own up to your mistakes.
           </p>
         </Post>
         <Post>
           <Link prefetch href="/blog/students-mindset">
             <a>
-              <h2>A Student's Mindset</h2>
+              <h2>A Student’s Mindset</h2>
             </a>
           </Link>
           <time>2/5/2019</time>
           <p>
-            In this post, I'm going to outline the shape of a short series I'm
+            In this post, I’m going to outline the shape of a short series I’m
             doing for what I think is the most important lesson of my first year
-            as a software developer: a student's mindset.
+            as a software developer: a student’s mindset.
           </p>
         </Post>
       </li>

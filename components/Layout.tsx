@@ -10,7 +10,7 @@ const LayoutStyles = styled.div<{ home: boolean }>`
   justify-content: ${props => (props.home ? "center" : "flex-start")};
   align-items: center;
   background: ${props => (props.home ? "transparent" : "white")};
-  @media (max-width: 750px) {
+  @media (max-width: 600px) {
     padding-bottom: ${props => (props.home ? "20vh" : 0)};
     padding-top: ${props => (props.home ? "0" : "90px")};
   }

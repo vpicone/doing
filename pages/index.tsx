@@ -10,7 +10,7 @@ const Display = styled.h1`
   max-width: 900px;
   line-height: 1;
   margin: ${props => props.theme.spacing[4]};
-  @media (max-width: 750px) {
+  @media (max-width: 600px) {
     font-size: ${props => props.theme.typeScale[11]}px;
     max-width: 375px;
   }

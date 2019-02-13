@@ -1,8 +1,8 @@
 import Layout from "./BlogLayout";
-import Link from "next/link";
+import Links from "./Links";
 
 export default ({ children }) => (
-  <Layout title="A Students Mindset" subtitle="Learning to Learn">
+  <Layout title="A Student’s Mindset" subtitle="Learning to Learn">
     {children}
   </Layout>
 );
@@ -15,15 +15,11 @@ While at the Zeit Day conference in San Francisco earlier this year, Scott Tolin
 
 The student's mindset has become an invaluable tool throughout my first year. I'll be writing a short series on what these things mean to me in the context of becoming a better developer and person.
 
-- Empathy for your coworkers and users
-- Self-forgiveness when things go awry
-- Humility and admitting your faults
+- Empathy
+- Self-forgiveness
+- Humility
 - Learning – always learning.
 
 I hope putting these ideas out into the universe will encourage myself and others to reach for the most courteous, and most open version of themselves.
 
-<Link preftech href="/blog/empathy">
-  <a className="next">
-    <span>1. Empathy</span>&nbsp;&nbsp;→
-  </a>
-</Link>
+<Links next={{ href: "/blog/empathy", title: "Empathy" }} />

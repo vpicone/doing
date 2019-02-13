@@ -39,7 +39,7 @@ const LinkList = styled.ul<ListProps>`
       ${props => (props.home ? props.theme.colors.brand03 : "#fb4b53")};
   }
 
-  @media (max-width: 750px) {
+  @media (max-width: 600px) {
     margin: 0;
     padding: 0 ${props => props.theme.spacing[4]};
   }
@@ -55,7 +55,7 @@ const ListItem = styled.li`
     font-variation-settings: var(--semi-bold-condensed);
     cursor: pointer;
   }
-  @media (max-width: 750px) {
+  @media (max-width: 600px) {
     margin: ${props => props.theme.spacing[4]};
     font-size: ${props => props.theme.typeScale[3]}px;
     padding: 0 0.25rem;
