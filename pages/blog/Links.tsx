@@ -9,7 +9,7 @@ const LinkContainer = styled.div`
     color: inherit;
     max-width: 48%;
     text-align: center;
-    margin: ${props => props.theme.spacing[2]} 0;
+    margin: 0;
   }
 
   .next {
@@ -35,6 +35,7 @@ const LabelContainer = styled.div`
   margin-top: ${props => props.theme.spacing[8]};
   font-size: ${props => props.theme.typeScale[6]}px;
   span {
+    cursor: pointer;
     background: linear-gradient(
       0.25turn,
       hsl(30, 96%, 64%),
@@ -43,7 +44,6 @@ const LabelContainer = styled.div`
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
     &:first-of-type {
       background: linear-gradient(
         0.25turn,
@@ -56,8 +56,13 @@ const LabelContainer = styled.div`
     }
   }
 
+  span.next {
+    margin-left: auto;
+  }
+
   .disabled {
     background: linear-gradient(0.25turn, hsl(30, 0%, 64%), hsl(35, 0%, 64%));
+    cursor: default;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -70,8 +75,19 @@ const Links: React.FC<{
 }> = ({ prev, next }) => (
   <>
     <LabelContainer>
-      <span>{prev ? "← Previous" : ""}</span>
-      <span className={`${next.disabled ? "disabled" : ""}`}>Next →</span>
+      {prev && (
+        <Link passHref href={prev.href}>
+          <span>← Previous</span>
+        </Link>
+      )}
+      <Link passHref href={next.href}>
+        <span
+          style={{ alignSelf: "flex-end" }}
+          className={`next ${next.disabled ? "disabled" : ""}`}
+        >
+          Next →
+        </span>
+      </Link>
     </LabelContainer>
     <LinkContainer>
       {prev && (

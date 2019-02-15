@@ -4,7 +4,6 @@
     "module": "esnext",
     "jsx": "preserve",
     "lib": ["dom", "es2017"],
-    "moduleResolution": "node",
     "allowJs": true,
     "noEmit": true,
     "allowSyntheticDefaultImports": true,
