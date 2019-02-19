@@ -80,14 +80,17 @@ const Links: React.FC<{
           <span>← Previous</span>
         </Link>
       )}
-      <Link passHref href={next.href}>
-        <span
-          style={{ alignSelf: "flex-end" }}
-          className={`next ${next.disabled ? "disabled" : ""}`}
-        >
+      {next.disabled ? (
+        <span style={{ alignSelf: "flex-end" }} className={`next disabled`}>
           Next →
         </span>
-      </Link>
+      ) : (
+        <Link passHref href={next.href}>
+          <span style={{ alignSelf: "flex-end" }} className={`next`}>
+            Next →
+          </span>
+        </Link>
+      )}
     </LabelContainer>
     <LinkContainer>
       {prev && (
